@@ -18,7 +18,7 @@ class Gitthor < Thor
 
   # Get list os a users repos
   # Arguments: username (required)
-  desc "repos", "See users repos [ARGS = username]"
+  desc "repos", "See users repos [Arguments = username]"
   def repos(username)
     user_repos = @@github.repos.list user: username
     user_repos.each do |repo|
@@ -28,7 +28,7 @@ class Gitthor < Thor
 
   # Get list os a users repos
   # Arguments: username (required)
-  desc "repos", "See users repos [ARGS = username]"
+  desc "repos", "See users repos [Arguments = username]"
   def repos(username)
     user_repos = @@github.repos.list user: username
     user_repos.each do |repo|
@@ -38,7 +38,7 @@ class Gitthor < Thor
 
   # Search Github for repos
   # Arguments: seach term (required)
-  desc "search", "Search for Users / Repos / Issues / Email [ARGS = Searchtype / Searchterm]"
+  desc "search", "Search for Users / Repos / Issues / Email [Arguments = Searchtype / Searchterm]"
   def search(type, term)
     search = @@github
     result = search.search.users keyword: "#{term}"
