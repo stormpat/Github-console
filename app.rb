@@ -8,12 +8,12 @@ class Gitthor < Thor
 
   @@github = Github.new
 
-  # Login to github (Basic auth) @TODO OAuth
+  # Login to github (Basic auth)
   # Arguments: username, password (required, required)
   desc "login", "Login to github [ARGS = username, password]"
   def login(username, password)
     github = Github.new basic_auth: "#{username}:#{password}"
-    puts github
+    # TODO FINISH LOGIN ALSO WITH OAUTH
   end
 
   # Get list os a users repos
@@ -48,6 +48,6 @@ class Gitthor < Thor
 
 
 
-end # Gitthor end
+end #Class end
 
 Gitthor.start
