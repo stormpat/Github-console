@@ -43,17 +43,12 @@ class Gitthor < Thor
   def search(type, term)
     search = @@github
     result = search.search.send(type, term)
-
       result.each do |val|
         puts "Repo name: " + result.repositories[0].name
         puts "Description: " + result.repositories[0].description
         puts "Language : " + result.repositories[0].language
     end
-
   end
-
-
-
 end #Gitthor
 
 Gitthor.start
